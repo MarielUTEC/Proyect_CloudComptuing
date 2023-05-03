@@ -13,9 +13,11 @@ from app import models, topRoutes
 
 from app.routes.login_bp import login_bp
 from app.routes.register_bp import register_bp
+from app.routes.juego_bp import juego_bp
 
 app.register_blueprint(login_bp, url_prefix="/login")
 app.register_blueprint(register_bp, url_prefix="/register")
+app.register_blueprint(juego_bp, url_prefix="/juego")
 
 
 db.create_all() # Create sql tables for our data models (Usuario and Score)

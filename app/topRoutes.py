@@ -24,7 +24,7 @@ def getAllUsers():
     print(users)
     userStrings = ""
     for user in users:
-        userStrings += user.dni + " " + user.password + " " + user.email + "<br>"
+        userStrings += user.username + " " + user.password + " " + user.email + "<br>"
     return userStrings
 
 

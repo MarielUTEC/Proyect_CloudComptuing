@@ -5,7 +5,7 @@ from app import db
 from app.models import Usuario
 import requests
 import json
-import datetime
+from cryptography.hazmat.primitives import hashes   
 
 def Login():
     if request.method == "POST":
@@ -24,7 +24,7 @@ def Login():
             digest = hashes.Hash(hashes.SHA256())
             digest.update(password)
             hashedPassword = str(digest.finalize())
-            return redirect("/juego")
+            return redirect("/juego?username="+username+"&email="+email+"&password="+hashedPassword)
         except Exception as err:
             print(err)
             return "Error while accessing user. Try again"  

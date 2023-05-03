@@ -9,12 +9,14 @@ class Usuario(db.Model):
     age = db.Column(db.String(64), index=True)
     email = db.Column(db.String(120), index=True, unique=True)
     password = db.Column(db.String(128))
+    score = db.relationship('Score', backref='user', lazy='dynamic')
 
-"""
 class Score(db.Model):
     id = db.Column(db.Integer, primary_key=True, autoincrement=True)
     points = db.Column(db.String(64), index=True)
-   
+    user_id = db.Column(db.Integer, db.ForeignKey('usuario.id'))
+
+"""       
 
 class Playlist(db.Model):
     id = db.Column(db.Integer, primary_key = True, autoincrement = True)
