@@ -1,3 +1,5 @@
+{% extends "base.html" %}
+{% block content %}
 <h1>Register</h1>
 <form method="post">
     <label for="username">Username</label>
@@ -9,5 +11,5 @@
     <label for="age">Age</label>
     <input name="age" id="age" required>
     <input type="submit" value="Register">
-  
 </form>
+{% endblock %}

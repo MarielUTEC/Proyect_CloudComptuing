@@ -1,17 +1,7 @@
-<html>
-    <head>
-    </head>
-    <body>
-        <h1>Higher or Lower Viewers</h1>  
-        <br>  
-        <h2>Login</h2>          
-            <a href="/login">
-                <button> Login </button>
-            </a>
-        <br>
-        <h2> Register</h2>
-            <a href="/user/register">
-                <button> Registrar</button>
-            </a>
-    </body>
-</html>
+{# extendemos base.html #}
+{% extends "base.html" %}
+{# contenido para index.html debajo de base #}
+{% block content %}
+    <h1>Juego:</h1>
+    <h2>Higher or Lower Viewers</h2>
+{% endblock %}

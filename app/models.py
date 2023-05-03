@@ -10,6 +10,7 @@ class Usuario(db.Model):
     email = db.Column(db.String(120), index=True, unique=True)
     password = db.Column(db.String(128))
 
+"""
 class Score(db.Model):
     id = db.Column(db.Integer, primary_key=True, autoincrement=True)
     points = db.Column(db.String(64), index=True)
@@ -33,7 +34,7 @@ class Detalle_Score(db.Model):
     TimeSeg = db.Column(db.Integer, priamry_key = True, unique = True)
     Correct = db.Column(db.Integer, integer = True)
     Incorrect = db.Column(db.Integer, integer = True)
-
+"""
 
 db.create_all()
 
