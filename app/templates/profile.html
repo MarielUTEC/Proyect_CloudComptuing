@@ -1,6 +1,8 @@
 {% extends "base.html" %}
 {% block content %}
+<a href="/profile/update">Update your profile</a> 
     <h2>Profile</h2>
-    <h1>Bienvenido al Juego,{{username}}, email: {{email}}</h1> 
-    <a href="/profile/update">Update your profile</a> 
+    <h1>Bienvenido al Juego < {{username}} > </h1> 
+    <h2>Escoge la canción con mas Viewers</h2>
+    <input type="button" value="Play" onclick="location.href='/game'">
 {% endblock %}

@@ -14,7 +14,7 @@ class Usuario(db.Model):
 class Score(db.Model):
     id = db.Column(db.Integer, primary_key=True, autoincrement=True)
     points = db.Column(db.String(64), index=True)
-    user_id = db.Column(db.Integer, db.ForeignKey('usuario.id'))
+    user_username = db.Column(db.String(64), db.ForeignKey('usuario.username'))
 
 """       
 
