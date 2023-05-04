@@ -46,6 +46,8 @@ def loginasync():
     except:
         return json.dumps({"success": False, "username": Usuario.username}) 
 
+
+
 def register():
     return redirect("/register")
 
