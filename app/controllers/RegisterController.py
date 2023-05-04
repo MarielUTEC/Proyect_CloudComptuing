@@ -43,8 +43,24 @@ def registerasync():
     body=request.get_json()
     print(body)
 
-    user=Usuario(username=body["username"],age=body["age"],email=body["email"],password=body["password"])
+    username = body["username"]
+    email = body["email"]
 
+    try:
+        user1 = Usuario.query.filter(Usuario.username == username).first()
+        user2 = Usuario.query.filter(Usuario.email == email).first()
+    except Exception as err:
+        print(err)
+        return "Error while accessing user. Try again"
+
+    if user1 != None:
+        return "Username already exists"
+    if user2 != None:
+        return "Email already exists"
+
+    
+    
+    user=Usuario(username=body["username"],age=body["age"],email=body["email"],password=body["password"])
     try:
         db.session.add(user)
         db.session.commit()
