@@ -34,17 +34,18 @@ def Login():
 
 def loginasync():
     body = request.get_json()
-    print(body)
     username=body["username"] 
     password=body["password"]
     try:
         user = Usuario.query.filter(Usuario.username == username).first()
-        if user == None or password != Usuario.password:
+        print(user.password)
+        if username == None or password != user.password:
             return json.dumps({"success": False})
         else:
-            return json.dumps({"success": True, "username": Usuario.username})
+            print(body)
+            return json.dumps({"success": True, "username": user.username})
     except:
-        return json.dumps({"success": False, "username": Usuario.username}) 
+        return json.dumps({"success": False, "username": user.username}) 
 
 
 
